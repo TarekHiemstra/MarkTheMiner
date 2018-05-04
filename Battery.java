@@ -7,7 +7,7 @@ public class Battery implements TimedEventHandler {
 	private transient Thread drainTheBattery;
 	private TimedEvent batteryDraining;
 	
-	Battery (int initialCharge, int Capacity, int drainSpeed) {
+	public Battery (int initialCharge, int Capacity, int drainSpeed) {
 		this.drainSpeed = 0;
 		this.chargeLevel = initialCharge;
 	}

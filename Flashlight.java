@@ -5,7 +5,7 @@ public class Flashlight extends LightSource {
 	private Battery battery;
 	private boolean lampOn;
 	
-	Flashlight (String name) {
+	public Flashlight (String name) {
 		super(name);
 	}
 

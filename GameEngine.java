@@ -20,7 +20,7 @@ public class GameEngine implements TimedEventHandler, Serializable {
 	private Space exit;
 	private transient Thread explosionThread;
 
-	GameEngine(CommandInterpreter commandInterpreter){
+	public GameEngine(CommandInterpreter commandInterpreter){
 
 		this.myPlayer 		= new Player();
 		this.gameEnd 		= false;
