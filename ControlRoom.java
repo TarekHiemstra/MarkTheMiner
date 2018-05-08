@@ -35,11 +35,15 @@ public class ControlRoom extends Space implements TimedEventHandler {
 		if (tapOpen) {
 			waterLevel = waterLevel + INCREMENT;
 			System.out.println("Water level in Control room is now "+waterLevel+". Hurry Up!");
-			if (waterLevel >MAXWATERLEVEL) {
+			if (waterLevel >= MAXWATERLEVEL) {
 				//close this room, end of game
 				waterRunning.interrupt();
+				System.out.println("Mine filled with water, game over!");
 			}
 		}
 	}
-	
+
+	public int getWaterLevel() {
+		return waterLevel;
+	}
 }
