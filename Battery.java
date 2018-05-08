@@ -1,7 +1,9 @@
 package assign61;
 
+import java.io.Serializable;
+
 public class Battery implements TimedEventHandler, Serializable {
-	
+		
 	private int chargeLevel;
 	private int drainSpeed;
 	private transient Thread drainTheBattery;

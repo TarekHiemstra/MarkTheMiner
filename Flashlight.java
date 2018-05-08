@@ -1,5 +1,7 @@
 package assign61;
 
+import java.io.Serializable;
+
 public class Flashlight extends LightSource implements Serializable {
 
 	private Battery battery;
