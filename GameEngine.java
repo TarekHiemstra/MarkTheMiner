@@ -17,7 +17,9 @@ public class GameEngine implements TimedEventHandler, Serializable {
 	//private final String ENDCOMMAND="end";
 	//private final String SAVECOMMAND = "save";
 	//private final String TAKECOMMAND = "take";
+	private ControlRoom control;
 	private Space exit;
+	
 	private transient Thread explosionThread;
 
 	public GameEngine(CommandInterpreter commandInterpreter){
@@ -33,7 +35,7 @@ public class GameEngine implements TimedEventHandler, Serializable {
 				+ "Ticking sound comes through the collapsed cave. \n"
 				+ "Somewhere close by there is a running water tap. Better get out of here asap!");
 		Space dimLight 		= new Space ("Dimlight","The room is dimly lit and nothing can be seen");
-		ControlRoom control = new ControlRoom ("The control room","Watch out this room is getting filled with water");
+		control = new ControlRoom ("The control room","Watch out this room is getting filled with water");
 		exit 				= new Space("Exit","Congratulations you saved Mark");
 
 		//set up the map
@@ -64,7 +66,7 @@ public class GameEngine implements TimedEventHandler, Serializable {
 	/* OLD CODE
 	public Set<String> getOptions() {
 		// TODO Auto-generated method stub
-		//LUOKAN SISÄÄN???? anna komennot
+		//LUOKAN SISÃ„Ã„N???? anna komennot
 		//Set interface doesn't allow add, a concrete set is required
 		HashSet<String> hs= new HashSet<String>(myPlayer.getCurrentSpace().getOptions());
 		hs.add(ENDCOMMAND);
@@ -84,7 +86,10 @@ public class GameEngine implements TimedEventHandler, Serializable {
 	}
 
 	public void stepForward(String[] userInput) {
-		if (userInput[0].equalsIgnoreCase(GameCommands.ENDCOMMAND)) {
+		if (control.getWaterLevel() >= 100 ) {
+			this.gameEnd = true;
+			myInterpreter.stop();
+		} else if (userInput[0].equalsIgnoreCase(GameCommands.ENDCOMMAND)) {
 			gameEnd = true;
 			explosionThread.interrupt();
 			myInterpreter.stop();
