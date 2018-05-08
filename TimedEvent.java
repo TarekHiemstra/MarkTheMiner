@@ -13,13 +13,17 @@ public class TimedEvent implements Runnable, Serializable {
 	}
 
 	public void run() {
-		try {
-			Thread.sleep((long) (timeout*1000));
-			handler.handleEvent(this.name);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(name+" was stopped");
-			//e.printStackTrace();
+		boolean running = true;
+		while (running) {
+			try {
+				Thread.sleep((long) (timeout * 1000));
+				handler.handleEvent(this.name);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				System.out.println(name + " was stopped");
+				// e.printStackTrace();
+				running = false;
+			}
 		}
 	}
 }
