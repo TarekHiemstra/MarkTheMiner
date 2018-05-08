@@ -1,6 +1,6 @@
 package assign61;
 
-public class TimedEvent implements Runnable {
+public class TimedEvent implements Runnable, Serializable {
 	
 	private String name;
 	private double timeout;

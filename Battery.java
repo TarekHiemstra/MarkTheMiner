@@ -1,6 +1,6 @@
 package assign61;
 
-public class Battery implements TimedEventHandler {
+public class Battery implements TimedEventHandler, Serializable {
 	
 	private int chargeLevel;
 	private int drainSpeed;

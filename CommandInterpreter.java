@@ -11,7 +11,7 @@ public class CommandInterpreter implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Scanner thisScanner;
+	private transient Scanner thisScanner;
 	private boolean stop;
 	
 	public CommandInterpreter(){

@@ -1,6 +1,6 @@
 package assign61;
 
-public class Flashlight extends LightSource {
+public class Flashlight extends LightSource implements Serializable {
 
 	private Battery battery;
 	private boolean lampOn;

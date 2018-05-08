@@ -12,7 +12,7 @@ public class ControlRoom extends Space implements TimedEventHandler {
 	private static final long serialVersionUID = 1L;
 	private boolean tapOpen;
 	private  TimedEvent roomFilling;
-	private Thread waterRunning;
+	private transient Thread waterRunning;
 	
 	public ControlRoom(String name, String description) {
 		super(name, description);

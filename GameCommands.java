@@ -3,7 +3,7 @@ package assign61;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GameCommands {
+public class GameCommands implements Serializable {
 
 	private Player myPlayer;
 	public static final String ENDCOMMAND  ="end";
