@@ -8,7 +8,7 @@ public class Battery implements TimedEventHandler, Serializable {
 	private TimedEvent batteryDraining;
 	
 	public Battery (int initialCharge, int Capacity, int drainSpeed) {
-		this.drainSpeed = 0;
+		this.drainSpeed = drainSpeed;
 		this.chargeLevel = initialCharge;
 	}
 
