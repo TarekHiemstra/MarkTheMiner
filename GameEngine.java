@@ -89,10 +89,13 @@ public class GameEngine implements TimedEventHandler, Serializable {
 		if (control.getWaterLevel() >= 100 ) {
 			this.gameEnd = true;
 			myInterpreter.stop();
+			System.exit(0);
 		} else if (userInput[0].equalsIgnoreCase(GameCommands.ENDCOMMAND)) {
 			gameEnd = true;
 			explosionThread.interrupt();
 			myInterpreter.stop();
+			control.closeTap();
+			System.exit(0);
 		} else if (userInput[0].equalsIgnoreCase(GameCommands.SAVECOMMAND)){
 			Main.saveGame();	
 		} else if (userInput[0].equalsIgnoreCase(GameCommands.TAKECOMMAND)&&userInput.length>1){
@@ -132,6 +135,8 @@ public class GameEngine implements TimedEventHandler, Serializable {
 			System.out.println ("You were not fast enough. Mine was collapsed in an explosion.");
 			gameEnd = true;
 			myInterpreter.stop();
+			control.closeTap();
+			System.exit(0);
 		}	
 	}
 
