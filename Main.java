@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 
 public class Main {
 	
-	static GameController myGameController;
+	public static GameController myGameController;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
