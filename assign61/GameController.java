@@ -25,6 +25,7 @@ public class GameController implements Serializable {
 			if (userInput != null&&!myGameEngine.getGameEnd()) {
 				myGameEngine.stepForward(userInput);
 			}
-		}	
+		}
+		System.exit(0);
 	}
 }
