@@ -127,6 +127,10 @@ public class GameEngine implements TimedEventHandler, Serializable {
 		return this.gameEnd;
 	}
 
+	public void closeTap() {
+		control.closeTap();
+	}
+	
 	private void closeGame() {
 		gameEnd = true;
 		control.closeTap();

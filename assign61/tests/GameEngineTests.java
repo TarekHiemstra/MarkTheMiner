@@ -14,19 +14,10 @@ class GameEngineTests {
 	@Test
 	void explosionTime() throws InterruptedException {
 		GameEngine game = new GameEngine(new CommandInterpreter());
+		game.closeTap();
 		Thread.sleep(99000);
 		assertFalse(game.getGameEnd());
 		Thread.sleep(1000);
 		assertTrue(game.getGameEnd());
-	}
-
-	// Test the save game functionality
-	@Test
-	void saveGame() throws Exception {
-		Main.myGameController = new GameController();
-		GameEngine game = new GameEngine(new CommandInterpreter());
-		Main.saveGame();
-		File f = new File("./MarkTheMiner.ser");
-		assertTrue(f.exists() && !f.isDirectory());
 	}
 }
