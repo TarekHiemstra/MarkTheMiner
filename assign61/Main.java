@@ -8,7 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class Main {
-	
+
 	public static GameController myGameController;
 
 	public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class Main {
 		myGameController = new GameController();
 		myGameController.start();
 	}
-	
+
 	public static void saveGame() {
 		try {
 			FileOutputStream out = new FileOutputStream("MarkTheMiner.ser");
@@ -32,12 +32,12 @@ public class Main {
 		}
 	}
 
-	public static GameController restoreGame(){
+	public static GameController restoreGame() {
 		try {
 			FileInputStream in = new FileInputStream("MarkTheMiner.ser");
 			ObjectInputStream obin = new ObjectInputStream(in);
 			obin.close();
-			return (GameController)obin.readObject();
+			return (GameController) obin.readObject();
 		} catch (FileNotFoundException e) {
 			System.out.println("Could not open dogsmain.ser");
 			e.printStackTrace();

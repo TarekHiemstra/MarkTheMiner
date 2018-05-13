@@ -3,11 +3,11 @@ package assign61;
 import java.io.Serializable;
 
 public class TimedEvent implements Runnable, Serializable {
-	
+
 	private String name;
 	private double timeout;
 	private TimedEventHandler handler;
-	
+
 	public TimedEvent(String name, double timeout, TimedEventHandler handler) {
 		this.name = name;
 		this.timeout = timeout;

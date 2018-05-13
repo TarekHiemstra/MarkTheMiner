@@ -1,10 +1,10 @@
 package assign61;
 
 public abstract class GameObject {
-	
+
 	String name;
-	
-	public GameObject(String name){
+
+	public GameObject(String name) {
 		this.name = name;
 	}
 

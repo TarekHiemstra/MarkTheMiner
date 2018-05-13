@@ -2,13 +2,8 @@ package assign61.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import java.io.File;
-import java.util.Arrays;
-
 import assign61.CommandInterpreter;
-import assign61.GameController;
 import assign61.GameEngine;
-import assign61.Main;
 
 class GameEngineTests {
 
@@ -22,14 +17,14 @@ class GameEngineTests {
 		Thread.sleep(1000);
 		assertTrue(game.getGameEnd());
 	}
-	
+
 	// Test different inputs to win the game
 	@Test
 	void inputTest1() throws Exception {
 		GameEngine game = new GameEngine(new CommandInterpreter());
-		String[] step1 = {"east"};
-		String[] step2 = {"up"};
-		String[] step3 = {"up"};
+		String[] step1 = { "east" };
+		String[] step2 = { "up" };
+		String[] step3 = { "up" };
 		game.stepForward(step1);
 		assertEquals("Dimlight", game.getPrompt());
 		assertFalse(game.getGameEnd());
@@ -39,12 +34,12 @@ class GameEngineTests {
 		game.stepForward(step3);
 		assertTrue(game.getGameEnd());
 	}
-	
+
 	@Test
 	void inputTest2() throws Exception {
 		GameEngine game = new GameEngine(new CommandInterpreter());
-		String[] step1 = {"west"};
-		String[] step2 = {"up"};
+		String[] step1 = { "west" };
+		String[] step2 = { "up" };
 		game.stepForward(step1);
 		assertEquals("The control room", game.getPrompt());
 		assertFalse(game.getGameEnd());

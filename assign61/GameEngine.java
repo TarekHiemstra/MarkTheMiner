@@ -1,8 +1,6 @@
 package assign61;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 public class GameEngine implements TimedEventHandler, Serializable {
 
@@ -130,7 +128,7 @@ public class GameEngine implements TimedEventHandler, Serializable {
 	public void closeTap() {
 		control.closeTap();
 	}
-	
+
 	private void closeGame() {
 		gameEnd = true;
 		control.closeTap();
